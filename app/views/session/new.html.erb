@@ -1,0 +1,27 @@
+<br/><br/><br/><br/><br/>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 col-sm-12 col-xs-12 p-5 authenticate-image">
+            <%= image_tag "undraw_access_account_re_8spm.svg", class:"signup-image" %>
+        </div>
+        <div class="signin-container col-md-6 col-sm-12 col-xs-12">
+            <p class="text-center title mb-0">Login to account</p>
+            <p class="text-center mt-0">I don't have an account <%= link_to "Sign Up", signup_path %></p>
+            <%= form_with url:signin_path do |form|%>  
+                <div class="mb-3">
+                    <%= form.label:Email_Id%>
+                    <%= form.text_field:email, class:"form-control input", placeholder:"e.g: nandha@gmail.com" %>
+                </div>
+                <div class="mb-3">
+                    <%= form.label:Password%>
+                    <%= form.password_field:password, class:"form-control input", placeholder:"e.g: password" %>
+                </div>
+                <div class="mb-3 mt-2">
+                    <%= form.submit "Sign in", class:"btn btn-primary d-block m-auto w-100"%>
+                </div>
+            <%end%>
+        </div>
+
+    </div>
+</div>

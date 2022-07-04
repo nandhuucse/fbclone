@@ -1,0 +1,58 @@
+<div class="card post-card m-auto p-3">
+                <div class="card-header post-card-header">
+                    <div class="d-flex post-heading-content">
+                        <span class="post-image">
+                            <%= image_tag "user-image.png", class:"user-image" %>
+                        </span>
+                        <span class="d-flex flex-column post-header-name">
+                            <%if @user.id==post.user.id%>
+                                <span class="post-username"><%= link_to post.user.name, profile_path, class:"post-user-name"%></span>
+                            <%else %>
+                                <span class="post-username"><%=link_to post.user.name, userprofile_path(post.user)%></span>
+                            <%end %>
+                            
+                            <span class="post-date"><%= post.created_at.strftime("%B") %>&nbsp;<%= post.created_at.day %></span>
+                        <span>
+                        
+                       
+                    </div>
+                </div>
+                <div class="card-content post-card-content pt-3">
+                    <%if post.content%>
+                        <%= post.content%>
+                    <%end%>
+                </div>
+                <div class="mt-5">
+                    <% if post.liked?(@user)%>
+                        <%=button_to "Unlike",like_path(post), remote: true , method: "put", class: "btn btn-danger btn-sm mt-2" %>
+                    <%else%>
+                        <%= button_to "Like", like_path(post), method: "put", class: "btn btn-primary btn-sm mt-2" %>
+                    <%end%>
+                </div>
+                
+                <p class="subtitle"><strong><%= post.likes.count%></strong> Like</p>
+                
+
+                <div class="comments-section">
+                        <p class="subtitle" data-toggle="collapse" href="#collapse<%=post.id%>" aria-expanded="false" aria-controls="collapseExample"><strong><%= post.comments.count%></strong> Comments</p>
+                        <div class="collapse" id="collapse<%=post.id%>">
+                            <% post.comments.each do |comment| %>
+                                <div class="comment-card">
+                                    <span class="commented-name"><%= comment.user.name %></span><br/>
+                                    <span class="subtitle"><%= comment.comment %></span>
+                                </div>
+                            <% end %>
+                        </div>
+            
+                    <%# render post comments %>
+                    <div class="mt-4">
+                        <%= form_with url: comment_path, model: post.comments.new do |f|%>
+                            <%= f.text_area:comment, class:"form-control",placeholder:"eg: Comments..."%>
+                            <%= f.hidden_field:post_id, input_html:  {value: post.id} %>
+                            <%= f.submit 'Add a comment', class:"btn btn-primary mt-2"%>
+                        <%end%>
+                    </div>
+                   
+
+                </div>
+            </div>

@@ -1,0 +1,38 @@
+.signin-container{
+    height: fit-content;
+    position: relative;
+    top: 50px;
+    /* width: 100%; */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.signin-container .input{
+    height: 50px;
+    border: 2px solid whitesmoke;
+    background: whitesmoke;
+}
+.signin-container .input:focus{
+    outline: none !important;
+    box-shadow: 1px -1px 12px 3px rgba(198, 198, 198, 0.75);
+}
+.signin-image{
+    width: 100%;
+}
+.signin-container .title{
+    font-size: 45px;
+    font-weight: bold;
+}
+.edit-container{
+    background: white;
+    padding: 10px;
+}
+.edit-container .input{
+    height: 50px;
+    border: 2px solid whitesmoke;
+    background: whitesmoke;
+}
+.edit-container .input:focus{
+    outline: none !important;
+    box-shadow: 1px -1px 12px 3px rgba(198, 198, 198, 0.75);
+}

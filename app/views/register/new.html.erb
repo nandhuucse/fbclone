@@ -1,0 +1,44 @@
+<br/><br/><br/><br/><br/><br/>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6 col-sm-12 col-xs-12 p-5 authenticate-image">
+            <%= image_tag "undraw_access_account_re_8spm.svg", class:"signup-image" %>
+        </div>
+        <div class="signup-container col-md-6 col-sm-12 col-xs-12">
+            <p class="text-center title mb-0">Create account</p>
+            <p class="text-center mt-0">Already have an account <%= link_to "signin", signin_path %></p>
+            <%= form_with model:@user, url:signup_path do |form|%>
+                
+               <% if @user.errors.any? %>
+                    <div class="alert alert-danger">
+                        <% @user.errors.full_messages.each do |message|%>
+                        <div><%= message%></div>
+                        <%end%>
+                    </div>
+                <%end%>
+
+                <div class="mb-3">
+                    <%= form.label:Fullname%>
+                    <%= form.text_field:name, class:"form-control input", placeholder:"e.g: Nandha" %>
+                </div>
+                <div class="mb-3">
+                    <%= form.label:Email_Id%>
+                    <%= form.text_field:email, class:"form-control input", placeholder:"e.g: nandha@gmail.com" %>
+                </div>
+                <div class="mb-3">
+                    <%= form.label:Password%>
+                    <%= form.password_field:password, class:"form-control input", placeholder:"e.g: password" %>
+                </div>
+                <div class="mb-3">
+                    <%= form.label:Password_Confirmation%>
+                    <%= form.password_field:password_confirmation, class:"form-control input", placeholder:"e.g: password" %>
+                </div>
+                <div class="mb-3 mt-2">
+                    <%= form.submit "Sign Up", class:"btn btn-primary d-block m-auto w-100"%>
+                </div>
+            <%end%>
+        </div>
+
+    </div>
+</div>

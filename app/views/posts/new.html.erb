@@ -1,0 +1,19 @@
+
+<%= render partial:"shared/navbar"%>
+<br/>
+<div class="container">
+    <div class="d-flex flex-column">
+        <div>
+            <%= image_tag "undraw_post_online_re_1b82.svg", class:"new-img" %>
+        </div>
+
+        <div>
+                <%= form_with model:@post, remote: true do |f|%>
+                    <%= f.text_area:content, class:"form-control new-post", placeholder:"What's on your mind...?"%>
+                    <%= f.submit 'Create new post', class: "btn btn-primary mt-2" %>
+                <%end%>
+        </div>
+    </div>
+
+
+</div>

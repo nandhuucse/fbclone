@@ -1,0 +1,23 @@
+
+<%= render partial:"shared/navbar"%>
+<br/>
+<div class="container edit-container">
+    <h1 class="text-center profile-title">Update Your Profile</h1>
+    <div>
+        <%= form_with model:@user, url:update_path do |form|%>
+           <div class="mb-3">
+                <%= form.label:Fullname%>
+                <%= form.text_field:name, class:"form-control input", placeholder:"e.g: Nandha" %>
+            </div>
+            <div class="mb-3">
+                    <%= form.label:Email_Id%>
+                    <%= form.text_field:email, class:"form-control input", placeholder:"e.g: nandha@gmail.com" %>
+            </div>
+            
+            <div class="mb-3 mt-2">
+                <%= form.submit "Save Changes", class:"btn btn-primary d-block m-auto w-100"%>
+            </div>
+        <%end%>
+
+    </div>
+</div>

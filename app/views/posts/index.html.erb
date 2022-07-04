@@ -1,0 +1,40 @@
+<%= render partial: "shared/navbar"%>
+<div class="d-flex">
+    <%# post view div %>
+    <div class="show-post">
+        <% @posts.each do |post|%>
+            <br/>
+            <%= render partial: "shared/post", locals:{post:post}%>
+        <%end%>
+
+    </div>
+
+    <%# user's list %>
+    <div class="user-list ml-auto my-4 mx-5">
+        <div class="user-list-inner">
+            <div class="d-flex flex-column">
+                <%for user in @user_list%>
+                    <%if user.name != @user.name%>
+                        <div class="d-flex p-2">
+                            <span class="user-list-img">
+                                <%= image_tag "user-image.png", class:"user-list-image" %>
+                            </span>
+                            <span class="ml-2 mt-2 logged-user-list">
+                                <span><%= user.name%><span>
+                            </span>
+                                <span>
+                                    <%if !user.followed_by?(@user)%>
+                                        <%= button_to "Follow", follow_path(user.id), class:"btn btn-sm btn-primary follow-btn"%> 
+                                    <%else%>
+                                        <p class="follow-check d-flex"> Following<p> 
+                                    <%end%>
+                                </span>
+                            
+                        </div>
+                    <%end%>
+                <%end%>
+            <div>
+        </div>
+    </div>
+
+</div>

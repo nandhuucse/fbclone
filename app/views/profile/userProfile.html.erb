@@ -1,0 +1,34 @@
+<%= render partial:"shared/navbar"%>
+
+<br/>
+<div class="container profile-container">
+    <div class="user-profile-container">
+        <h1 class="profile-title">PostBook Profile</h1>
+        <div>
+            <div class="user-profile d-flex">
+                <%= image_tag "user-image.png", class:"user-profile-image" %>
+                <div class="d-flex flex-column user-name-email">
+                    <div class="d-flex">
+                        <span class="user-profile-name"><%= @userprofile.name%></span>
+                    </div>
+                    <span class="user-profile-email"><%= @userprofile.email%></span>
+                    <% if !@userprofile.followed_by?(@user) %>
+                        <%= button_to "Follow", follow_path, class:"btn btn-primary"%>
+                    <% else %>
+                        <%= button_to "Un Follow", follow_path, class:"btn btn-danger"%>
+                    <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-post-container">
+            <% @userprofile.posts.reverse.each do |post|%>
+                <div class="mt-2">
+                    <%= render partial:"shared/post", locals:{post:post} %>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>

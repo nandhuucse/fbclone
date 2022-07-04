@@ -1,0 +1,29 @@
+<%= render partial:"shared/navbar"%>
+
+<br/>
+<div class="container profile-container">
+    <div class="user-profile-container">
+        <h1 class="profile-title">PostBook Profile</h1>
+        <div>
+            <div class="user-profile d-flex">
+                <%= image_tag "user-image.png", class:"user-profile-image" %>
+                <div class="d-flex flex-column user-name-email">
+                    <div class="d-flex">
+                        <span class="user-profile-name"><%= @user.name%></span>
+                        <%= link_to "Edit Profile", edit_path(@user), class:"profile-editor"%>
+                    </div>
+                    <span class="user-profile-email"><%= @user.email%></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-post-container mt-2">
+            <% @user.posts.each do |post|%>
+                <div class="mt-2">
+                    <%= render partial:"shared/post", locals:{post:post} %>
+               </div>
+            <%end%>
+        </div>
+    </div>
+</div>

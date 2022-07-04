@@ -1,0 +1,221 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+    background-color: #F0F2F5;
+}
+.navbar .nav-item .nav-link{
+    font-weight: 800;
+    color: white;
+}
+/* .post-image{
+    width: 300px;
+    display: block;
+    margin: auto;
+} */
+.new-post{
+    height: 100px !important;
+}
+.post-card{
+    width: 50%;
+}
+.logout-btn{
+    background: transparent;
+    border: none;
+}
+.post-card-header{
+    background-color: white;
+    
+}
+.post-image{
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    border-radius: 50%;
+}
+.post-heading-content{
+    width: 65% !important;
+    margin-left: -25px;
+}
+.post-username{
+    width: 70%;
+    position: relative;
+    top: 10px;
+    color: #027BFD;
+    text-decoration: none;
+    font-weight: 800;
+}
+.post-user-name:hover{
+    text-decoration: none;
+}
+.user-image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.new-img{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: auto;
+}
+.user-list{
+    height: 100%;
+    width: 20%;
+    background: white;
+    box-shadow: 1px -1px 12px 3px rgba(198, 198, 198, 0.75);
+    padding: 30px;
+}
+.show-post{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+.user-list-inner{
+    height: 100%;
+    width: 90%;
+    /* background-color: aquamarine; */
+    display: block;
+    margin: auto;
+}
+.user-list-image{
+    height: 40px;
+    width: 40px;
+}
+.user-list-img{
+    height: 40px;
+    width: 40px;
+    background-color: #027BFD;
+    border-radius: 50%;
+}
+.current-user{
+    color: white;
+    font-weight: bold;
+    /* margin-right: 20px; */
+    margin-top: -7px;
+    text-transform: capitalize;
+}
+.post-header-name{
+    width: 300px;
+    margin-left: 20px;
+    margin-top: -7px;
+
+}
+.post-date{
+    font-size: 13px;
+    color: darkcyan;
+    margin-top: 5px;
+}
+.commented-name{
+    font-weight: bold;
+}
+.comment-card{
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    background: #F0F2F5;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.user-profile{
+    height: 100px;
+    width: 100px;
+    background: #027BFD;
+    border-radius: 50%;
+}
+.user-profile-image{
+    height: 95px;
+    width: 95px;
+}
+.user-profile-container{
+    background: white;
+    padding: 40px;
+    height: auto;
+    width: auto;
+}
+.user-name-email{
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+.user-profile-name{
+    font-size: 25px;
+    font-weight: bold;
+    color: darkgoldenrod;
+}
+.profile-title{
+    color: darkmagenta;
+}
+.user-profile-email{
+    color: darkcyan;
+    font-weight: 700;
+}
+.profile-editor{
+    width: 100px;
+    font-size: smaller;
+    /* margin-top: 10px; */
+    text-align: center;
+    margin-left: 15px;
+    color: white;
+    font-weight: 700;
+    background: #027BFD;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.profile-editor:hover{
+    text-decoration: none;
+    background: #0456ad;
+    color: white;
+}
+.profile-post-container{
+    height: auto;
+    width: auto;
+    /* background-color: white; */
+}
+.profile-post-date{
+    color: darkblue;
+    font-weight: 700;
+}
+.profile-posts{
+    background-color: #F0F2F5;
+    padding: 15px;
+}
+.follow-btn{
+    margin-left: 200px;
+    margin-top: -50px;
+    font-size: 12px;
+}
+.logged-user-list{
+    padding-right: 20px;
+}
+.follow-check{
+    margin-left: 180px;
+    margin-top: -20px;
+    font-size: 12px;
+    color: green;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .post-username{
+        width: auto;
+        position: relative;
+        top: 10px;
+    }
+    .post-image{
+        display: none;
+    }
+}
